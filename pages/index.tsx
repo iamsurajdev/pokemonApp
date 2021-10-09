@@ -1,13 +1,12 @@
-import Head from "next/head";
+import SEO from "@components/SEO";
 
 export default function Home() {
   return (
     <div className="">
-      <Head>
-        <title>Pokemon App</title>
-        <meta name="description" content="App for information about Pokemon" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title={"Pokemon App"}
+        description={"App for information about Pokemon"}
+      />
       <main>
         <h1>Pokemon</h1>
       </main>
