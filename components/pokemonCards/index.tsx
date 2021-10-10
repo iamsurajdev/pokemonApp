@@ -1,5 +1,5 @@
 import { pokemonListSingleItemType } from "@lib/types/pokemon";
-import PokemonCard from "./pokemoncard";
+import PokemonCard from "./pokemonCard";
 
 const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
   pokemons,
@@ -7,12 +7,10 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
   console.log("props : ", pokemons);
 
   return (
-    <div>
+    <div className="flex justify-center flex-wrap items-center w-full">
       {pokemons &&
         pokemons?.map((pokemon: pokemonListSingleItemType, index) => (
-          <div key={index}>
-            <PokemonCard pokemon={pokemon} />
-          </div>
+          <PokemonCard pokemon={pokemon} key={index} />
         ))}
     </div>
   );
