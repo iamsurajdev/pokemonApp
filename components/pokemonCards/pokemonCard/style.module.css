@@ -1,5 +1,6 @@
 .cardContainer {
   @apply w-64 m-4 max-h-72 rounded-lg cursor-pointer;
+  transition: all 0.2s ease-in;
 }
 
 .cardContainer:hover {
