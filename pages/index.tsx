@@ -4,33 +4,30 @@ import axios from "@services/axiosConfig";
 import { getAllPokemon } from "@services/api";
 
 type fetchedData = {
-  results: resultsType;
+  results: resultsType[];
   count: number;
 };
 
-type resultsType = [
-  {
-    name: string;
-    url: string;
-    data?: any;
-  }
-];
+type resultsType = {
+  name: string;
+  url: string;
+  image: string;
+};
 
 export default function Home() {
-  const [allPokemon, setAllPokemon] = useState<resultsType[] | any>();
+  const [allPokemon, setAllPokemon] = useState<resultsType[]>();
 
   const fetchPokemon = async () => {
     try {
       const data: fetchedData = (await axios.get(getAllPokemon(10))).data;
       const { results } = data;
-      const d: resultsType[] | any = await Promise.all(
-        results.map(async (i) => {
-          const res = await axios.get(i.url);
-          console.log(res);
+      const d: resultsType[] | any = results.map((i, index) => {
+        const paddedId: string = String(index + 1);
+        // const image: string = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
+        const image: string = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${paddedId}.svg`;
+        return { ...i, image: image };
+      });
 
-          return { ...i, data: res?.data };
-        })
-      );
       console.log(d);
       setAllPokemon(d);
     } catch (error) {
@@ -52,13 +49,10 @@ export default function Home() {
         <h1>Pokemon</h1>
         <div>
           {allPokemon &&
-            allPokemon?.map((pokemon: resultsType | any) => (
-              <div key={pokemon?.data?.id}>
+            allPokemon?.map((pokemon: resultsType, index) => (
+              <div key={index}>
                 <p>name : {pokemon.name}</p>
-                <img
-                  src={pokemon.data.sprites.other.dream_world.front_default}
-                  alt={pokemon.name}
-                />
+                <img src={pokemon.image} alt={pokemon.name} />
               </div>
             ))}
         </div>
