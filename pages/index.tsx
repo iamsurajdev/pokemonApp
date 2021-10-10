@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SEO from "@components/SEO";
 import axios from "@services/axiosConfig";
-import { getAllPokemon } from "@services/api";
+import { getAllPokemon, pokemonImageURL } from "@services/api";
 import { pokemonListSingleItemType, pokemonListType } from "@lib/types/pokemon";
 
 export default function Home() {
@@ -9,11 +9,11 @@ export default function Home() {
 
   const fetchPokemon = async () => {
     try {
-      const data: pokemonListType = (await axios.get(getAllPokemon(10))).data;
+      const data: pokemonListType = (await axios.get(getAllPokemon(9))).data;
       const { results } = data;
       const d: pokemonListSingleItemType[] | any = results.map((i, index) => {
         const paddedId: string = String(index + 1);
-        const image: string = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${paddedId}.svg`;
+        const image: string = pokemonImageURL(paddedId);
         return { ...i, image: image };
       });
 
