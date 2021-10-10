@@ -3,6 +3,7 @@ import SEO from "@components/SEO";
 import axios from "@services/axiosConfig";
 import { getAllPokemon, pokemonImageURL } from "@services/api";
 import { pokemonListSingleItemType, pokemonListType } from "@lib/types/pokemon";
+import PokemonCards from "@components/pokemonCards";
 
 export default function Home() {
   const [allPokemon, setAllPokemon] = useState<pokemonListSingleItemType[]>();
@@ -37,13 +38,7 @@ export default function Home() {
       <main>
         <h1>Pokemon</h1>
         <div>
-          {allPokemon &&
-            allPokemon?.map((pokemon: pokemonListSingleItemType, index) => (
-              <div key={index}>
-                <p>name : {pokemon.name}</p>
-                <img src={pokemon.image} alt={pokemon.name} />
-              </div>
-            ))}
+          <PokemonCards pokemons={allPokemon} />
         </div>
       </main>
     </div>
