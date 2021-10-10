@@ -1,3 +1,4 @@
+import { pokemonTypesCheck } from "@lib/helpers/pokemonTypesChecker";
 import axios from "@lib/services/axiosConfig";
 import { pokemonDetails, pokemonListSingleItemType } from "@lib/types/pokemon";
 import { useEffect, useState } from "react";
@@ -27,7 +28,12 @@ const PokemonCard: React.FC<{
   }, []);
 
   return (
-    <div className={styles.cardContainer}>
+    <div
+      className={styles.cardContainer}
+      style={{
+        backgroundColor: pokemonTypesCheck[details.types[0].type.name].color,
+      }}
+    >
       <p className="font-bold h-8 text-center capitalize">{pokemon.name}</p>
       <img
         className=" max-h-52 m-auto w-full"
