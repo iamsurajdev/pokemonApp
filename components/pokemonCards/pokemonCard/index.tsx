@@ -31,7 +31,7 @@ const PokemonCard: React.FC<{
     <div
       className={styles.cardContainer}
       style={{
-        backgroundColor: pokemonTypesCheck[details.types[0].type.name].color,
+        backgroundColor: pokemonTypesCheck[details?.types[0].type.name]?.color,
       }}
     >
       <p className="font-bold h-8 text-center capitalize">{pokemon.name}</p>

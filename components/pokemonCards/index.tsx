@@ -4,8 +4,6 @@ import PokemonCard from "./pokemonCard";
 const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
   pokemons,
 }) => {
-  console.log("props : ", pokemons);
-
   return (
     <div className="flex justify-center flex-wrap items-center w-full">
       {pokemons &&
