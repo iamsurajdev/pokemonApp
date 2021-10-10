@@ -10,7 +10,7 @@ export default function Home() {
 
   const fetchPokemon = async () => {
     try {
-      const data: pokemonListType = (await axios.get(getAllPokemon(9))).data;
+      const data: pokemonListType = (await axios.get(getAllPokemon(21))).data;
       const { results } = data;
       const d: pokemonListSingleItemType[] | any = results.map((i, index) => {
         const paddedId: string = String(index + 1);
@@ -36,7 +36,7 @@ export default function Home() {
         description={"App for information about Pokemon"}
       />
       <main>
-        <h1>Pokemon</h1>
+        <h1 className="text-4xl text-center mt-4 mb-7">Pokemon Wiki</h1>
         <div>
           <PokemonCards pokemons={allPokemon} />
         </div>
