@@ -10,9 +10,7 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
   const [modalInfo, setModalInfo] = useState<pokemonDetails>();
 
   const openModalHelper = (details: pokemonDetails) => {
-    console.log("details : ", details);
     setModalInfo(details);
-
     setModal(true);
   };
 
