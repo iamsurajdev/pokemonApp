@@ -38,9 +38,10 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
         onOk={closeModalHelper}
         onCancel={closeModalHelper}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <p>{modalInfo.baseExperience}</p>
+        <p>{modalInfo.type}</p>
+        <p>{modalInfo.height}</p>
+        <p>{modalInfo.weight}</p>
       </Modal>
     </>
   );

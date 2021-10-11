@@ -22,6 +22,9 @@ const PokemonCard: React.FC<{
         type: response.types[0]?.type.name,
         name: response.forms[0].name,
         baseExperience: response.base_experience,
+        topMoves: response?.moves
+          .slice(0, response.moves.length < 5 ? response.moves.length : 5)
+          .map((item) => item.move.name),
       };
 
       setDetails(finalData);
