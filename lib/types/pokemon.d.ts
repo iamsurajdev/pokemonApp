@@ -16,4 +16,5 @@ export type pokemonDetails = {
   name: string;
   baseExperience: number;
   topMoves: string[];
+  imageUrl: string;
 };

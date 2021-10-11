@@ -26,6 +26,7 @@ const PokemonCard: React.FC<{
         topMoves: response?.moves
           .slice(0, response.moves.length < 5 ? response.moves.length : 5)
           .map((item) => item.move.name),
+        imageUrl: pokemon.image,
       };
 
       setDetails(finalData);

@@ -18,6 +18,7 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
 
   const closeModalHelper = () => {
     setModal(false);
+    setModalInfo(null);
   };
 
   return (
@@ -38,6 +39,11 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
         onCancel={closeModalHelper}
         footer={null}
       >
+        <img
+          className=" max-h-52 m-auto w-full"
+          src={modalInfo?.imageUrl}
+          alt={modalInfo?.name}
+        />
         <p>{modalInfo?.baseExperience}</p>
         <p>{modalInfo?.type}</p>
         <p>{modalInfo?.height}</p>
