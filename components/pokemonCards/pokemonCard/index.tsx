@@ -10,17 +10,21 @@ const PokemonCard: React.FC<{
   const [details, setDetails] = useState<pokemonDetails>();
 
   const fetchPokemonDetails = async () => {
-    const response: pokemonDetails = (
-      await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-    ).data;
+    try {
+      const response: pokemonDetails = (
+        await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+      ).data;
 
-    const finalData: pokemonDetails = {
-      height: response.height,
-      weight: response.weight,
-      types: response.types,
-    };
+      const finalData: pokemonDetails = {
+        height: response.height,
+        weight: response.weight,
+        types: response.types,
+      };
 
-    setDetails(finalData);
+      setDetails(finalData);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
