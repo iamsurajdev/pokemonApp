@@ -1,82 +1,82 @@
 export const pokemonTypesCheck = {
   normal: {
-    color: "#607D8B",
-    icon: "",
+    color: "#b36394",
+    icon: "😃",
   },
   fighting: {
-    color: "#607D8B",
-    icon: "",
+    color: "#c68d30",
+    icon: "👊",
   },
   flying: {
-    color: "#03A9F4",
-    icon: "",
+    color: "#32c2dd",
+    icon: "🛸",
   },
   poison: {
-    color: "#607D8B",
-    icon: "",
+    color: "#b34711",
+    icon: "💀",
   },
   ground: {
-    color: "#66BB6A",
-    icon: "",
+    color: "#74cd04",
+    icon: "⛱️",
   },
   rock: {
-    color: "#607D8B",
-    icon: "",
+    color: "#9b9f94",
+    icon: "🪨",
   },
   bug: {
     color: "#E91E63",
-    icon: "",
+    icon: "🐛",
   },
   ghost: {
-    color: "#607D8B",
-    icon: "",
+    color: "#a6a683",
+    icon: "👻",
   },
   steel: {
     color: "#607D8B",
-    icon: "",
+    icon: "🔩",
   },
   fire: {
     color: "#E91E63",
-    icon: "",
+    icon: "🔥",
   },
   water: {
     color: "#03A9F4",
-    icon: "",
+    icon: "💧",
   },
   grass: {
     color: "#66BB6A",
-    icon: "",
+    icon: "🍀",
   },
   electric: {
-    color: "#607D8B",
-    icon: "",
+    color: "#e4d309",
+    icon: "⚡",
   },
   psychic: {
-    color: "#607D8B",
-    icon: "",
+    color: "#EC7F7D",
+    icon: "🧠",
   },
   ice: {
     color: "#03A9F4",
-    icon: "",
+    icon: "🧊",
   },
   dragon: {
-    color: "#E91E63",
-    icon: "",
+    color: "#f38949",
+    icon: "🐲",
   },
   dark: {
-    color: "#263238",
-    icon: "",
+    color: "#484840",
+    icon: "🖤",
   },
   fairy: {
     color: "#FBC02D",
-    icon: "",
+    icon: "🧚",
   },
   unknown: {
     color: "#607D8B",
-    icon: "",
+    icon: "🚫",
   },
   shadow: {
-    color: "#607D8B",
-    icon: "",
+    color: "#1a1a19",
+    icon: "☣️",
   },
 };

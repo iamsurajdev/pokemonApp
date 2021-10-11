@@ -1,3 +1,4 @@
+import { pokemonTypesCheck } from "@lib/helpers/pokemonTypesChecker";
 import { pokemonDetails, pokemonListSingleItemType } from "@lib/types/pokemon";
 import { Modal } from "antd";
 import { useState } from "react";
@@ -43,7 +44,8 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
         </p>
         <p>
           {" "}
-          <span className="font-bold">Type : </span> {modalInfo?.type}
+          <span className="font-bold">Type : </span> {modalInfo?.type} &nbsp;
+          {pokemonTypesCheck[modalInfo?.type]?.icon}
         </p>
         <p>
           {" "}
