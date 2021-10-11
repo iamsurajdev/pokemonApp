@@ -33,21 +33,34 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
             />
           ))}
       </div>
-      <Modal
-        title={modalInfo?.name}
-        visible={modal}
-        onCancel={closeModalHelper}
-        footer={null}
-      >
+      <Modal title="" visible={modal} onCancel={closeModalHelper} footer={null}>
         <img
           className=" max-h-52 m-auto w-full"
           src={modalInfo?.imageUrl}
           alt={modalInfo?.name}
         />
-        <p>{modalInfo?.baseExperience}</p>
-        <p>{modalInfo?.type}</p>
-        <p>{modalInfo?.height}</p>
-        <p>{modalInfo?.weight}</p>
+        <p>
+          {" "}
+          <span className="font-bold">Name :</span> {modalInfo?.name}
+        </p>
+        <p>
+          {" "}
+          <span className="font-bold">Type : </span> {modalInfo?.type}
+        </p>
+        <p>
+          {" "}
+          <span className="font-bold">Base experience :</span>{" "}
+          {modalInfo?.baseExperience}
+        </p>
+        <p>
+          {" "}
+          <span className="font-bold">Height : </span> {modalInfo?.height}
+        </p>
+        <p>
+          {" "}
+          <span className="font-bold">Weight : </span>
+          {modalInfo?.weight}
+        </p>
       </Modal>
     </>
   );
