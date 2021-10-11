@@ -5,6 +5,7 @@ import { getAllPokemon, pokemonImageURL } from "@services/api";
 import { pokemonListSingleItemType, pokemonListType } from "@lib/types/pokemon";
 import PokemonCards from "@components/pokemonCards";
 import { Spin } from "antd";
+import Header from "@components/header";
 
 export default function Home() {
   const [allPokemon, setAllPokemon] = useState<pokemonListSingleItemType[]>([]);
@@ -42,7 +43,7 @@ export default function Home() {
         description={"App for information about Pokemon"}
       />
       <main>
-        <h1 className="text-4xl text-center mt-4 mb-7">Pokemon Wiki</h1>
+        <Header />
         <Spin spinning={loader}>
           <PokemonCards pokemons={allPokemon} />
           <div className="min-w-full flex justify-center items-center mt-8 mb-8">
