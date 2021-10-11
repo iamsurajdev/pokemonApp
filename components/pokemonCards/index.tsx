@@ -35,13 +35,13 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
       <Modal
         title={modalInfo?.name}
         visible={modal}
-        onOk={closeModalHelper}
         onCancel={closeModalHelper}
+        footer={null}
       >
-        <p>{modalInfo.baseExperience}</p>
-        <p>{modalInfo.type}</p>
-        <p>{modalInfo.height}</p>
-        <p>{modalInfo.weight}</p>
+        <p>{modalInfo?.baseExperience}</p>
+        <p>{modalInfo?.type}</p>
+        <p>{modalInfo?.height}</p>
+        <p>{modalInfo?.weight}</p>
       </Modal>
     </>
   );
