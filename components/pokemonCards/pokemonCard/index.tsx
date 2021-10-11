@@ -1,3 +1,4 @@
+import { capitalizeFirstLetter } from "@lib/helpers/commonHelpers";
 import { pokemonTypesCheck } from "@lib/helpers/pokemonTypesChecker";
 import axios from "@lib/services/axiosConfig";
 import { pokemonDetails, pokemonListSingleItemType } from "@lib/types/pokemon";
@@ -20,7 +21,7 @@ const PokemonCard: React.FC<{
         height: response.height,
         weight: response.weight,
         type: response.types[0]?.type.name,
-        name: response.forms[0].name,
+        name: capitalizeFirstLetter(response.forms[0].name),
         baseExperience: response.base_experience,
         topMoves: response?.moves
           .slice(0, response.moves.length < 5 ? response.moves.length : 5)
