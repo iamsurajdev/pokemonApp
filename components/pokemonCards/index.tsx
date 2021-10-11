@@ -39,25 +39,20 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
           alt={modalInfo?.name}
         />
         <p>
-          {" "}
           <span className="font-bold">Name :</span> {modalInfo?.name}
         </p>
         <p>
-          {" "}
           <span className="font-bold">Type : </span> {modalInfo?.type} &nbsp;
           {pokemonTypesCheck[modalInfo?.type]?.icon}
         </p>
         <p>
-          {" "}
-          <span className="font-bold">Base experience :</span>{" "}
+          <span className="font-bold">Base experience :</span>
           {modalInfo?.baseExperience}
         </p>
         <p>
-          {" "}
           <span className="font-bold">Height : </span> {modalInfo?.height}
         </p>
         <p>
-          {" "}
           <span className="font-bold">Weight : </span>
           {modalInfo?.weight}
         </p>
