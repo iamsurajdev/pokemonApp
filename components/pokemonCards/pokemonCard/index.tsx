@@ -6,7 +6,8 @@ import styles from "./style.module.css";
 
 const PokemonCard: React.FC<{
   pokemon: pokemonListSingleItemType;
-}> = ({ pokemon }) => {
+  openModal: () => void;
+}> = ({ pokemon, openModal }) => {
   const [details, setDetails] = useState<pokemonDetails>();
 
   const fetchPokemonDetails = async () => {
@@ -32,19 +33,22 @@ const PokemonCard: React.FC<{
   }, []);
 
   return (
-    <div
-      className={styles.cardContainer}
-      style={{
-        backgroundColor: pokemonTypesCheck[details?.types[0].type.name]?.color,
-      }}
-    >
-      <p className="font-bold h-8 text-center capitalize">{pokemon.name}</p>
-      <img
-        className=" max-h-52 m-auto w-full"
-        src={pokemon.image}
-        alt={pokemon.name}
-      />
-    </div>
+    <a onClick={openModal}>
+      <div
+        className={styles.cardContainer}
+        style={{
+          backgroundColor:
+            pokemonTypesCheck[details?.types[0].type.name]?.color,
+        }}
+      >
+        <p className="font-bold h-8 text-center capitalize">{pokemon.name}</p>
+        <img
+          className=" max-h-52 m-auto w-full"
+          src={pokemon.image}
+          alt={pokemon.name}
+        />
+      </div>
+    </a>
   );
 };
 
