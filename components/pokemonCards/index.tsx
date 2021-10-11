@@ -66,8 +66,9 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
         >
           <p className="text-xl font-semibold ml-4">Top Moves</p>
           <div className="w-full flex justify-around items-center flex-wrap mb-2">
-            {modalInfo?.topMoves.map((item) => (
+            {modalInfo?.topMoves.map((item, index) => (
               <span
+                key={index}
                 className="p-2 mt-2 capitalize rounded-md"
                 style={{
                   backgroundColor: pokemonTypesCheck[modalInfo?.type]?.color,
