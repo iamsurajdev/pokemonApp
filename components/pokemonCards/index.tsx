@@ -1,4 +1,4 @@
-import { pokemonListSingleItemType } from "@lib/types/pokemon";
+import { pokemonDetails, pokemonListSingleItemType } from "@lib/types/pokemon";
 import { Modal } from "antd";
 import { useState } from "react";
 import PokemonCard from "./pokemonCard";
@@ -7,8 +7,12 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
   pokemons,
 }) => {
   const [modal, setModal] = useState(false);
+  const [modalInfo, setModalInfo] = useState<pokemonDetails>();
 
-  const openModalHelper = () => {
+  const openModalHelper = (details: pokemonDetails) => {
+    console.log("details : ", details);
+    setModalInfo(details);
+
     setModal(true);
   };
 
@@ -29,7 +33,7 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
           ))}
       </div>
       <Modal
-        title="Basic Modal"
+        title={modalInfo?.height}
         visible={modal}
         onOk={closeModalHelper}
         onCancel={closeModalHelper}
