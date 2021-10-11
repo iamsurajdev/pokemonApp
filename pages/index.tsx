@@ -4,12 +4,15 @@ import axios from "@services/axiosConfig";
 import { getAllPokemon, pokemonImageURL } from "@services/api";
 import { pokemonListSingleItemType, pokemonListType } from "@lib/types/pokemon";
 import PokemonCards from "@components/pokemonCards";
+import { Spin } from "antd";
 
 export default function Home() {
   const [allPokemon, setAllPokemon] = useState<pokemonListSingleItemType[]>([]);
   const [offset, setOffset] = useState(0);
+  const [loader, setLoader] = useState(false);
 
   const fetchPokemon = async () => {
+    setLoader(true);
     try {
       const data: pokemonListType = (await axios.get(getAllPokemon(21, offset)))
         .data;
@@ -23,6 +26,8 @@ export default function Home() {
       setAllPokemon([...allPokemon, ...d]);
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoader(false);
     }
   };
 
@@ -38,15 +43,17 @@ export default function Home() {
       />
       <main>
         <h1 className="text-4xl text-center mt-4 mb-7">Pokemon Wiki</h1>
-        <PokemonCards pokemons={allPokemon} />
-        <div className="min-w-full flex justify-center items-center mt-8 mb-8">
-          <button
-            className="p-3 rounded-xl bg-blue-400 font-semibold text-white hover:border-blue-900"
-            onClick={fetchPokemon}
-          >
-            Load more
-          </button>
-        </div>
+        <Spin spinning={loader}>
+          <PokemonCards pokemons={allPokemon} />
+          <div className="min-w-full flex justify-center items-center mt-8 mb-8">
+            <button
+              className="p-3 rounded-xl bg-blue-400 font-semibold text-white hover:border-blue-900"
+              onClick={fetchPokemon}
+            >
+              Load more
+            </button>
+          </div>
+        </Spin>
       </main>
     </div>
   );
