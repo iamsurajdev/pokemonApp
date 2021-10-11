@@ -12,14 +12,16 @@ const PokemonCard: React.FC<{
 
   const fetchPokemonDetails = async () => {
     try {
-      const response: pokemonDetails = (
+      const response: any = (
         await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
       ).data;
 
       const finalData: pokemonDetails = {
         height: response.height,
         weight: response.weight,
-        types: response.types,
+        type: response.types[0]?.type.name,
+        name: response.forms[0].name,
+        baseExperience: response.base_experience,
       };
 
       setDetails(finalData);
@@ -36,7 +38,7 @@ const PokemonCard: React.FC<{
     <div
       className={styles.cardContainer}
       style={{
-        backgroundColor: pokemonTypesCheck[details?.types[0].type.name]?.color,
+        backgroundColor: pokemonTypesCheck[details?.type]?.color,
       }}
       onClick={() => openModal(details)}
     >

@@ -33,7 +33,7 @@ const PokemonCards: React.FC<{ pokemons: pokemonListSingleItemType[] }> = ({
           ))}
       </div>
       <Modal
-        title={modalInfo?.height}
+        title={modalInfo?.name}
         visible={modal}
         onOk={closeModalHelper}
         onCancel={closeModalHelper}
