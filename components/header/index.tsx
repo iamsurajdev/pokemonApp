@@ -1,4 +1,5 @@
 import { GithubOutlined } from "@ant-design/icons";
+import styles from "./style.module.css";
 
 const Header = () => {
   return (
@@ -13,8 +14,8 @@ const Header = () => {
           <GithubOutlined />
         </a>
       </span>
-      <h1 className="text-4xl w-1/3 text-center flex-1 ">Pokemon Wiki 🚀</h1>
-      <span className="mr-8 w-1/3 text-right text-1xl">
+      <h1 className={styles.headerTitle}>Pokemon Wiki 🚀</h1>
+      <span className={styles.linkText}>
         Created with 💖 by{" "}
         <a
           href="https://iamsurajdev.in"
