@@ -39,8 +39,8 @@ export default function Home() {
   return (
     <div className="">
       <SEO
-        title={"Pokemon App"}
-        description={"App for information about Pokemon"}
+        title={"Pokemon Wiki"}
+        description={"Pokemon wiki, provide information about pokemon"}
       />
       <main>
         <Header />
