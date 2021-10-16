@@ -48,7 +48,7 @@ export default function Home() {
           <PokemonCards pokemons={allPokemon} />
           <div className="min-w-full flex justify-center items-center mt-8 mb-8">
             <button
-              className="p-3 rounded-xl bg-blue-400 font-semibold text-white hover:border-blue-900"
+              className="transform transition duration-300 p-3 mb-8 rounded-xl bg-blue-400 font-semibold text-white hover:bg-blue-600"
               onClick={fetchPokemon}
             >
               Load more
